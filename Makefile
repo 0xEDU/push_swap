@@ -3,7 +3,7 @@ NAME = push_swap
 CCFLAGS = -Wall -Wextra -Werror
 
 SRCS_PATH = ./sources
-OBJS_PATH = .
+OBJS_PATH = ./objects
 INCS_PATH = ./includes
 
 SRCS = $(addprefix $(SRCS_PATH)/, main.c)
@@ -15,10 +15,11 @@ $(NAME): $(OBJS)
 	$(CC) $(CCFLAGS) $(OBJS) -o $(NAME)
 
 $(OBJS): $(SRCS)
-	$(CC) $(CCFLAGS) -I$(INCS_PATH) -c $(SRCS)
+	@mkdir -p $(OBJS_PATH)
+	$(CC) $(CCFLAGS) -I$(INCS_PATH) -c $(SRCS) -o $(OBJS)
 
 clean:
-	rm -rf $(OBJS)
+	rm -rf $(OBJS_PATH)
 
 fclean: clean
 	rm -rf $(NAME)
