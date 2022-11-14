@@ -6,7 +6,7 @@
 /*   By: coder <marvin@42.fr>                       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/27 12:27:56 by coder             #+#    #+#             */
-/*   Updated: 2022/10/14 15:52:55 by edu              ###   ########.fr       */
+/*   Updated: 2022/11/14 17:57:08 by etachott         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -59,6 +59,31 @@ int	ft_printf(const char *fmt, ...)
 			len += ft_putchar(*fmt);
 		fmt++;
 	}
+	va_end(ap);
+	return (len);
+}
+
+int	ft_print(const char *fmt, ...)
+{
+	va_list	ap;
+	int		len;
+
+	len = 0;
+	if (!fmt)
+		return (-1);
+	va_start(ap, fmt);
+	while (*fmt)
+	{
+		if (*fmt == '%')
+		{
+			fmt++;
+			len += print_formats(ap, *fmt);
+		}
+		else
+			len += ft_putchar(*fmt);
+		fmt++;
+	}
+	len += ft_putchar('\n');
 	va_end(ap);
 	return (len);
 }

@@ -6,7 +6,7 @@
 #    By: coder <coder@student.42.fr>                +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/08/27 15:51:38 by coder             #+#    #+#              #
-#    Updated: 2022/11/13 08:08:06 by etachott         ###   ########.fr        #
+#    Updated: 2022/11/14 17:49:08 by etachott         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -84,25 +84,30 @@ LLOBJS = $(LLSRCS:$(PATH_LLSRCS)/%.c=$(PATH_OBJS)/%.o)
 all: $(NAME)
 
 $(NAME): $(LIBOBJS) $(GNLOBJS) $(FT_PRINTFOBJS) $(LLOBJS)
-	ar rcs $(NAME) $(LIBOBJS) $(GNLOBJS) $(FT_PRINTFOBJS)
+	@ar rcs $(NAME) $(LIBOBJS) $(GNLOBJS) $(FT_PRINTFOBJS)
+	@echo -e "LIBFT CREATED!"
 
 $(LIBOBJS): $(LIBSRCS)
-	$(CC) $(CCFLAGS) -I $(PATH_INCL)/ -c $(LIBSRCS)
+	@echo -e "COMPILING LIBOBJS"
+	@$(CC) $(CCFLAGS) -I $(PATH_INCL)/ -c $(LIBSRCS)
 
 $(GNLOBJS): $(GNLSRCS)
-	$(CC) $(CCFLAGS) -D BUFFER_SIZE=1 -I $(PATH_INCL)/ -c $(GNLSRCS)
+	@echo -e "COMPILING GNLOBJS"
+	@$(CC) $(CCFLAGS) -D BUFFER_SIZE=1 -I $(PATH_INCL)/ -c $(GNLSRCS)
 
 $(FT_PRINTFOBJS): $(FT_PRINTFSRCS)
-	$(CC) $(CCFLAGS) -I $(PATH_INCL)/ -c $(FT_PRINTFSRCS)
+	@echo -e "COMPILING FT_PRINTFOBJS"
+	@$(CC) $(CCFLAGS) -I $(PATH_INCL)/ -c $(FT_PRINTFSRCS)
 	
 $(LLOBJS): $(LLSRCS)
-	$(CC) $(CCFLAGS) -I $(PATH_INCL)/ -c $(LLSRCS)
+	@echo -e "COMPILING LLOBJS"
+	@$(CC) $(CCFLAGS) -I $(PATH_INCL)/ -c $(LLSRCS)
 
 clean:
-	/bin/rm -f *.o
+	@/bin/rm -f *.o
 
 fclean: clean
-	/bin/rm -f $(NAME)
+	@/bin/rm -f $(NAME)
 
 re: fclean all
 
