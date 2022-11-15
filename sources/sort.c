@@ -1,28 +1,14 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   validate_input.c                                   :+:      :+:    :+:   */
+/*   sort.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: etachott <etachott@student.42sp.org.b      +#+  +:+       +#+        */
+/*   By: etachott <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/11/14 17:19:46 by etachott          #+#    #+#             */
-/*   Updated: 2022/11/15 15:55:03 by etachott         ###   ########.fr       */
+/*   Created: 2022/11/15 15:32:26 by etachott          #+#    #+#             */
+/*   Updated: 2022/11/15 15:33:01 by etachott         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-int	validate_input(char *argv[])
-{
-	int	index;
-
-	index = 1;
-	while (argv[index])
-	{
-		if (ft_atoi(argv[index]))
-			index++;
-		else
-			return (0);
-	}
-	return (index);
-}

@@ -6,7 +6,7 @@
 /*   By: etachott <etachott@student.42sp.org.b      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/13 13:26:11 by etachott          #+#    #+#             */
-/*   Updated: 2022/11/14 17:29:55 by etachott         ###   ########.fr       */
+/*   Updated: 2022/11/15 15:52:17 by etachott         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,4 +25,5 @@ typedef struct s_stack {
 }				t_stack;
 
 int		validate_input(char *argv[]);
+t_stack	*argv_to_stack(char *argv[], int stack_size);
 #endif
