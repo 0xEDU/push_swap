@@ -6,7 +6,7 @@
 /*   By: etachott <etachott@student.42sp.org.b      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/13 11:23:40 by etachott          #+#    #+#             */
-/*   Updated: 2022/11/17 19:10:56 by etachott         ###   ########.fr       */
+/*   Updated: 2022/11/17 19:56:31 by etachott         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,6 +29,12 @@ int	main(int argc, char *argv[])
 	stack_a = argv_to_stack(argv, stack_size);
 	stack_b = create_empty_stack(stack_size);
 //	swap(&stack_a);
+	ft_print("BEFORE");
+	print_stack(stack_a);
+	ft_print("");
+	print_stack(stack_b);
+	push_a(&stack_a, &stack_b);
+	ft_print("AFTER");
 	print_stack(stack_a);
 	ft_print("");
 	print_stack(stack_b);
