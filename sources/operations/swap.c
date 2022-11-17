@@ -6,11 +6,11 @@
 /*   By: etachott <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/16 16:54:34 by etachott          #+#    #+#             */
-/*   Updated: 2022/11/17 16:17:21 by etachott         ###   ########.fr       */
+/*   Updated: 2022/11/17 16:23:29 by etachott         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../../includes/push_swap.h"
+#include "push_swap.h"
 
 void	swap(t_stack **stack)
 {
