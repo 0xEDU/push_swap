@@ -6,16 +6,16 @@
 /*   By: coder <marvin@42.fr>                       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/30 19:54:52 by coder             #+#    #+#             */
-/*   Updated: 2022/08/30 20:39:02 by coder            ###   ########.fr       */
+/*   Updated: 2022/11/17 15:15:47 by etachott         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int	ft_atoi(const char *str)
+long int	ft_atoi(const char *str)
 {
-	int	neg_counter;
-	int	final_num;
+	int			neg_counter;
+	long int	final_num;
 
 	neg_counter = 0;
 	final_num = 0;
