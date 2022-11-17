@@ -6,7 +6,7 @@
 /*   By: etachott <etachott@student.42sp.org.b      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/13 11:23:40 by etachott          #+#    #+#             */
-/*   Updated: 2022/11/17 16:20:12 by etachott         ###   ########.fr       */
+/*   Updated: 2022/11/17 19:10:56 by etachott         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@ int	main(int argc, char *argv[])
 	t_stack	*stack_b;
 	int		stack_size;
 
-	if (argc < 2)
+	if (argc <= 2)
 		exit(0);
 	stack_size = validate_input(argv);
 	if (!stack_size)
@@ -28,6 +28,7 @@ int	main(int argc, char *argv[])
 	}
 	stack_a = argv_to_stack(argv, stack_size);
 	stack_b = create_empty_stack(stack_size);
+//	swap(&stack_a);
 	print_stack(stack_a);
 	ft_print("");
 	print_stack(stack_b);

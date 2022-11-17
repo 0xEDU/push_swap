@@ -6,7 +6,7 @@
 /*   By: etachott <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/15 15:37:28 by etachott          #+#    #+#             */
-/*   Updated: 2022/11/17 16:08:01 by etachott         ###   ########.fr       */
+/*   Updated: 2022/11/17 18:31:38 by etachott         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,7 +31,8 @@ t_stack	*create_node(char *str)
 	t_stack		*node;
 
 	node = ft_calloc(sizeof (t_stack), 1);
-	node->value = ft_atoi(str);
+	if (str)
+		node->value = ft_atoi(str);
 	node->next = NULL;
 	return (node);
 }
@@ -49,11 +50,11 @@ t_stack	*create_empty_stack(int stack_size)
 	int		index;
 
 	index = stack_size - 1;
-	tail = create_node("0");
+	tail = create_node(NULL);
 	index--;
 	while (index)
 	{
-		stack = create_node("0");
+		stack = create_node(NULL);
 		add_node_front(&tail, stack);
 		index--;
 	}

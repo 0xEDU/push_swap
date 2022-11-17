@@ -6,7 +6,7 @@
 /*   By: etachott <etachott@student.42sp.org.b      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/14 17:19:46 by etachott          #+#    #+#             */
-/*   Updated: 2022/11/17 14:57:22 by etachott         ###   ########.fr       */
+/*   Updated: 2022/11/17 19:20:37 by etachott         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -65,6 +65,8 @@ int	validate_input(char *argv[])
 	while (argv[index])
 	{
 		if (ft_atoi(argv[index]))
+			index++;
+		else if (ft_strnstr(argv[index], "0", ft_strlen(argv[index])))
 			index++;
 		else
 			return (0);
