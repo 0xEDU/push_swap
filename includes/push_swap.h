@@ -6,7 +6,7 @@
 /*   By: etachott <etachott@student.42sp.org.b      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/13 13:26:11 by etachott          #+#    #+#             */
-/*   Updated: 2022/11/15 15:52:17 by etachott         ###   ########.fr       */
+/*   Updated: 2022/11/17 14:19:12 by etachott         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,14 +16,18 @@
 
 typedef struct s_stack {
 	int				value;
-	int				index;
-	int				pos;
-	int				target_pos;
-	int				cost_a;
-	int				cost_b;
+//	int				index;
+//	int				pos;
+//	int				target_pos;
+//	int				cost_a;
+//	int				cost_b;
 	struct s_stack	*next;
 }				t_stack;
 
-int		validate_input(char *argv[]);
 t_stack	*argv_to_stack(char *argv[], int stack_size);
+t_stack	*create_node(char *str);
+void	ft_stackfree(t_stack **stack);
+void	print_stack(t_stack *stack);
+void	swap(t_stack **stack);
+int		validate_input(char *argv[]);
 #endif
