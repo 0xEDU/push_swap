@@ -39,7 +39,7 @@ $(LIBFT):
 
 clean:
 	@echo -e "REMOVING OBJS..."
-	@rm -rf $(OBJS)
+	@rm -rf $(OBJS) $(OPERATIONS_OBJS)
 
 fclean: clean
 	@echo -e "FULL CLEAN"
