@@ -6,7 +6,7 @@
 /*   By: etachott <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/15 15:37:28 by etachott          #+#    #+#             */
-/*   Updated: 2022/11/17 14:19:31 by etachott         ###   ########.fr       */
+/*   Updated: 2022/11/17 16:08:01 by etachott         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,6 +40,24 @@ void	add_node_front(t_stack **stack, t_stack *new)
 {
 	new->next = *stack;
 	*stack = new;
+}
+
+t_stack	*create_empty_stack(int stack_size)
+{
+	t_stack	*stack;
+	t_stack	*tail;
+	int		index;
+
+	index = stack_size - 1;
+	tail = create_node("0");
+	index--;
+	while (index)
+	{
+		stack = create_node("0");
+		add_node_front(&tail, stack);
+		index--;
+	}
+	return (stack);
 }
 
 t_stack	*argv_to_stack(char *argv[], int stack_size)
