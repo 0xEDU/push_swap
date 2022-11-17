@@ -6,7 +6,7 @@
 /*   By: etachott <etachott@student.42sp.org.b      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/13 13:26:11 by etachott          #+#    #+#             */
-/*   Updated: 2022/11/17 14:19:12 by etachott         ###   ########.fr       */
+/*   Updated: 2022/11/17 16:19:01 by etachott         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,8 +26,10 @@ typedef struct s_stack {
 
 t_stack	*argv_to_stack(char *argv[], int stack_size);
 t_stack	*create_node(char *str);
+t_stack	*create_empty_stack(int stack_size);
 void	ft_stackfree(t_stack **stack);
 void	print_stack(t_stack *stack);
+void	super_swap(t_stack **stack_a, t_stack **stack_b);
 void	swap(t_stack **stack);
 int		validate_input(char *argv[]);
 #endif
