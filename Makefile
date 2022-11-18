@@ -16,7 +16,7 @@ SRCS = $(addprefix $(SRCS_PATH)/, main.c \
 
 OPERATIONS_SRCS = $(addprefix $(OPERATIONS_PATH)/, swap.c \
 				  push.c \
-				  rotate.c)
+				  reverse_rotate.c)
 
 OBJS = $(patsubst $(SRCS_PATH)/%.c, $(OBJS_PATH)/%.o, $(SRCS))
 OPERATIONS_OBJS = $(patsubst $(OPERATIONS_PATH)/%.c, $(OBJS_PATH)/%.o, $(OPERATIONS_SRCS))
