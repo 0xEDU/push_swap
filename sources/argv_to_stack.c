@@ -6,7 +6,7 @@
 /*   By: etachott <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/15 15:37:28 by etachott          #+#    #+#             */
-/*   Updated: 2022/11/17 18:31:38 by etachott         ###   ########.fr       */
+/*   Updated: 2022/11/18 15:39:09 by etachott         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@ void	print_stack(t_stack *stack)
 {
 	int	index;
 
-	index = 0;
+	index = 1;
 	while (stack)
 	{
 		ft_print("NODE %d: value = %d", index,
@@ -24,23 +24,6 @@ void	print_stack(t_stack *stack)
 		stack = stack->next;
 		index++;
 	}
-}
-
-t_stack	*create_node(char *str)
-{
-	t_stack		*node;
-
-	node = ft_calloc(sizeof (t_stack), 1);
-	if (str)
-		node->value = ft_atoi(str);
-	node->next = NULL;
-	return (node);
-}
-
-void	add_node_front(t_stack **stack, t_stack *new)
-{
-	new->next = *stack;
-	*stack = new;
 }
 
 t_stack	*create_empty_stack(int stack_size)
