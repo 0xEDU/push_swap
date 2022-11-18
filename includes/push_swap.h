@@ -6,7 +6,7 @@
 /*   By: etachott <etachott@student.42sp.org.b      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/13 13:26:11 by etachott          #+#    #+#             */
-/*   Updated: 2022/11/18 17:41:56 by etachott         ###   ########.fr       */
+/*   Updated: 2022/11/18 18:50:55 by etachott         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,6 +35,8 @@ void	push_a(t_stack **stack_a, t_stack **stack_b);
 void	push_b(t_stack **stack_a, t_stack **stack_b);
 void	rotate(t_stack **stack);
 void	rotate_rotate(t_stack **stack_a, t_stack **stack_b);
+void	reverse_rotate(t_stack **stack);
+void	reverse_rotate_rotate(t_stack **stack_a, t_stack **stack_b);
 void	super_swap(t_stack **stack_a, t_stack **stack_b);
 void	swap(t_stack **stack);
 int		validate_input(char *argv[]);

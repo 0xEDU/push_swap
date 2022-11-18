@@ -1,37 +1,33 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   reverse_rotate.c                                   :+:      :+:    :+:   */
+/*   rotate.c                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: etachott <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/11/18 16:05:12 by etachott          #+#    #+#             */
-/*   Updated: 2022/11/18 18:32:45 by etachott         ###   ########.fr       */
+/*   Created: 2022/11/18 18:34:18 by etachott          #+#    #+#             */
+/*   Updated: 2022/11/18 18:51:32 by etachott         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-void	reverse_rotate(t_stack **stack)
+void	rotate(t_stack **stack)
 {
 	t_stack	*head;
 	t_stack	*tmp;
-	t_stack	*tail;
 
+	tmp = (*stack)->next;
 	head = *stack;
-	tmp = *stack;
-	while (tmp->next)
-	{
-		tail = tmp;
-		tmp = tmp->next;
-	}
-	tail->next = NULL;
-	tmp->next = head;
+	head->next = NULL;
 	*stack = tmp;
+	while (tmp->next)
+		tmp = tmp->next;
+	tmp->next = head;
 }
 
-void	reverse_rotate_rotate(t_stack **stack_a, t_stack **stack_b)
+void	rotate_rotate(t_stack **stack_a, t_stack **stack_b)
 {
-	reverse_rotate(stack_a);
-	reverse_rotate(stack_b);
+	rotate(stack_a);
+	rotate(stack_b);
 }
