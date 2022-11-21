@@ -12,6 +12,7 @@ LIBFT = ./libft/libft.a
 SRCS = $(addprefix $(SRCS_PATH)/, main.c \
 	   argv_to_stack.c  \
 	   list_utils.c     \
+	   bubble_sort.c    \
 	   validate_input.c)
 
 OPERATIONS_SRCS = $(addprefix $(OPERATIONS_PATH)/, swap.c \
