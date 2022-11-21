@@ -6,7 +6,7 @@
 /*   By: etachott <etachott@student.42sp.org.b      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/13 13:26:11 by etachott          #+#    #+#             */
-/*   Updated: 2022/11/18 18:50:55 by etachott         ###   ########.fr       */
+/*   Updated: 2022/11/21 15:08:24 by etachott         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@
 
 typedef struct s_stack {
 	int				value;
-//	int				index;
+	int				index;
 //	int				pos;
 //	int				target_pos;
 //	int				cost_a;
@@ -33,11 +33,15 @@ void	print_stack(t_stack *stack);
 void	pop(t_stack **stack);
 void	push_a(t_stack **stack_a, t_stack **stack_b);
 void	push_b(t_stack **stack_a, t_stack **stack_b);
-void	rotate(t_stack **stack);
+void	rotate_a(t_stack **stack);
+void	rotate_b(t_stack **stack);
 void	rotate_rotate(t_stack **stack_a, t_stack **stack_b);
-void	reverse_rotate(t_stack **stack);
+void	reverse_rotate_a(t_stack **stack);
+void	reverse_rotate_b(t_stack **stack);
 void	reverse_rotate_rotate(t_stack **stack_a, t_stack **stack_b);
+void	swap_a(t_stack **stack);
+void	swap_b(t_stack **stack);
 void	super_swap(t_stack **stack_a, t_stack **stack_b);
-void	swap(t_stack **stack);
+void	sort(t_stack **stack_a, t_stack **stack_b, int stack_size);
 int		validate_input(char *argv[]);
 #endif
