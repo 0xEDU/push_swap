@@ -6,7 +6,7 @@
 /*   By: etachott <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/16 16:54:34 by etachott          #+#    #+#             */
-/*   Updated: 2022/11/17 16:23:29 by etachott         ###   ########.fr       */
+/*   Updated: 2022/11/21 15:07:44 by etachott         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,8 +22,31 @@ void	swap(t_stack **stack)
 	*stack = tmp;
 }
 
+void	swap_a(t_stack **stack)
+{
+	t_stack	*tmp;
+
+	tmp = (*stack)->next;
+	(*stack)->next = tmp->next;
+	tmp->next = *stack;
+	*stack = tmp;
+	ft_print("sa");
+}
+
+void	swap_b(t_stack **stack)
+{
+	t_stack	*tmp;
+
+	tmp = (*stack)->next;
+	(*stack)->next = tmp->next;
+	tmp->next = *stack;
+	*stack = tmp;
+	ft_print("sb");
+}
+
 void	super_swap(t_stack **stack_a, t_stack **stack_b)
 {
 	swap(stack_a);
 	swap(stack_b);
+	ft_print("ss");
 }
