@@ -6,13 +6,22 @@
 /*   By: etachott <etachott@student.42sp.org.b      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/13 11:23:40 by etachott          #+#    #+#             */
-/*   Updated: 2022/11/21 14:40:16 by etachott         ###   ########.fr       */
+/*   Updated: 2022/11/21 17:27:11 by etachott         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-
+int	is_sorted(t_stack *head)
+{
+	while (head->next != NULL)
+	{
+		if (head->value > head->next->value)
+			return (0);
+		head = head->next;
+	}
+	return (1);
+}
 
 void	init_index(t_stack **stack)
 {

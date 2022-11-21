@@ -13,6 +13,7 @@ SRCS = $(addprefix $(SRCS_PATH)/, main.c \
 	   argv_to_stack.c \
 	   list_utils.c    \
 	   sort.c          \
+	   sort_threes.c   \
 	   validate_input.c)
 
 OPERATIONS_SRCS = $(addprefix $(OPERATIONS_PATH)/, swap.c \
