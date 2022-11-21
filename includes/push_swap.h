@@ -6,7 +6,7 @@
 /*   By: etachott <etachott@student.42sp.org.b      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/13 13:26:11 by etachott          #+#    #+#             */
-/*   Updated: 2022/11/21 15:08:24 by etachott         ###   ########.fr       */
+/*   Updated: 2022/11/21 17:37:58 by etachott         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,6 +29,7 @@ void	add_node_front(t_stack **stack, t_stack *new);
 t_stack	*create_node(char *str);
 t_stack	*create_empty_stack(int stack_size);
 void	ft_stackfree(t_stack **stack);
+int		is_sorted(t_stack *head);
 void	print_stack(t_stack *stack);
 void	pop(t_stack **stack);
 void	push_a(t_stack **stack_a, t_stack **stack_b);
@@ -43,5 +44,6 @@ void	swap_a(t_stack **stack);
 void	swap_b(t_stack **stack);
 void	super_swap(t_stack **stack_a, t_stack **stack_b);
 void	sort(t_stack **stack_a, t_stack **stack_b, int stack_size);
+void	sort_threes(t_stack **stack);
 int		validate_input(char *argv[]);
 #endif
