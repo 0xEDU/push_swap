@@ -13,6 +13,7 @@ SRCS = $(addprefix $(SRCS_PATH)/, main.c \
 	   argv_to_stack.c \
 	   list_utils.c    \
 	   sort.c          \
+	   sort_big.c      \
 	   sort_threes.c   \
 	   validate_input.c)
 
