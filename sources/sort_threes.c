@@ -6,33 +6,29 @@
 /*   By: etachott <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/21 15:19:20 by etachott          #+#    #+#             */
-/*   Updated: 2022/11/21 17:37:34 by etachott         ###   ########.fr       */
+/*   Updated: 2022/11/22 10:17:09 by etachott         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-void	big_if(t_stack **stack)
+static void	big_if(t_stack **stack)
 {
-	if ((*stack)->index == 1
-		&& (*stack)->next->index == 3
-		&& (*stack)->next->next->index == 2)
+	if ((*stack)->index < (*stack)->next->index
+		&& (*stack)->index < (*stack)->next->next->index)
 		reverse_rotate_a(stack);
-	if ((*stack)->index == 2
-		&& (*stack)->next->index == 1
-		&& (*stack)->next->next->index == 3)
+	if ((*stack)->index > (*stack)->next->index
+		&& (*stack)->index < (*stack)->next->next->index)
 		swap_a(stack);
-	if ((*stack)->index == 2
-		&& (*stack)->next->index == 3
-		&& (*stack)->next->next->index == 1)
+	if ((*stack)->index < (*stack)->next->index
+		&& (*stack)->index > (*stack)->next->next->index)
 		reverse_rotate_a(stack);
-	if ((*stack)->index == 3
-		&& (*stack)->next->index == 1
-		&& (*stack)->next->next->index == 2)
+	if ((*stack)->index > (*stack)->next->index
+		&& (*stack)->index > (*stack)->next->next->index
+		&& (*stack)->next->index < (*stack)->next->next->index)
 		rotate_a(stack);
-	if ((*stack)->index == 3
-		&& (*stack)->next->index == 2
-		&& (*stack)->next->next->index == 1)
+	if ((*stack)->index > (*stack)->next->index
+		&& (*stack)->next->index > (*stack)->next->next->index)
 	{
 		rotate_a(stack);
 		swap_a(stack);
