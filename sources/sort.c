@@ -6,7 +6,7 @@
 /*   By: etachott <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/21 14:31:16 by etachott          #+#    #+#             */
-/*   Updated: 2022/11/22 11:10:56 by etachott         ###   ########.fr       */
+/*   Updated: 2022/11/22 11:32:40 by etachott         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,12 +22,11 @@ static void	sort_small(t_stack **stack)
 
 void	sort(t_stack **stack_a, t_stack **stack_b, int stack_size)
 {
-	(void)stack_b;
 	ft_print("STACK SIZE = %d", stack_size);
 	if (stack_size < 3)
 		sort_small(stack_a);
 	else if (stack_size == 3)
 		sort_threes(stack_a);
 	else
-		sort_big(stack_a, stack_b);
+		sort_big(stack_a, stack_b, stack_size);
 }

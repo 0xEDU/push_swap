@@ -6,7 +6,7 @@
 /*   By: etachott <etachott@student.42sp.org.b      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/13 11:23:40 by etachott          #+#    #+#             */
-/*   Updated: 2022/11/21 17:27:11 by etachott         ###   ########.fr       */
+/*   Updated: 2022/11/22 15:43:49 by etachott         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -75,7 +75,8 @@ int	main(int argc, char *argv[])
 	ft_print("");
 	print_stack(stack_b);
 	ft_print("");
-	sort(&stack_a, &stack_b, stack_size - 1);
+	if (!is_sorted(stack_a))
+		sort(&stack_a, &stack_b, stack_size - 1);
 	ft_print("AFTER");
 	print_stack(stack_a);
 	ft_print("");

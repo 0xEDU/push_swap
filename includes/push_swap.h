@@ -6,7 +6,7 @@
 /*   By: etachott <etachott@student.42sp.org.b      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/13 13:26:11 by etachott          #+#    #+#             */
-/*   Updated: 2022/11/22 11:11:32 by etachott         ###   ########.fr       */
+/*   Updated: 2022/11/22 16:06:25 by etachott         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@
 typedef struct s_stack {
 	int				value;
 	int				index;
-//	int				pos;
+	int				pos;
 //	int				target_pos;
 //	int				cost_a;
 //	int				cost_b;
@@ -29,6 +29,8 @@ void	add_node_front(t_stack **stack, t_stack *new);
 t_stack	*create_node(char *str);
 t_stack	*create_empty_stack(int stack_size);
 void	ft_stackfree(t_stack **stack);
+int		has_value(t_stack *stack);
+void	init_index(t_stack **stack);
 int		is_sorted(t_stack *head);
 void	print_stack(t_stack *stack);
 void	pop(t_stack **stack);
@@ -44,7 +46,7 @@ void	swap_a(t_stack **stack);
 void	swap_b(t_stack **stack);
 void	super_swap(t_stack **stack_a, t_stack **stack_b);
 void	sort(t_stack **stack_a, t_stack **stack_b, int stack_size);
-void	sort_big(t_stack **stack_a, t_stack **stack_b);
+void	sort_big(t_stack **stack_a, t_stack **stack_b, int stack_size);
 void	sort_threes(t_stack **stack);
 int		validate_input(char *argv[]);
 #endif
