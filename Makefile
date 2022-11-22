@@ -11,6 +11,7 @@ LIBFT = ./libft/libft.a
 
 SRCS = $(addprefix $(SRCS_PATH)/, main.c \
 	   argv_to_stack.c \
+	   calculate.c     \
 	   list_utils.c    \
 	   sort.c          \
 	   sort_big.c      \
