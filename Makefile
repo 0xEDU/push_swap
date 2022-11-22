@@ -44,6 +44,7 @@ $(LIBFT):
 
 clean:
 	@echo -e "REMOVING OBJS..."
+	@make --no-print-directory -C libft clean
 	@rm -rf $(OBJS) $(OPERATIONS_OBJS)
 
 fclean: clean
