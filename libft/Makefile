@@ -6,7 +6,7 @@
 #    By: coder <coder@student.42.fr>                +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/08/27 15:51:38 by coder             #+#    #+#              #
-#    Updated: 2022/11/14 17:49:08 by etachott         ###   ########.fr        #
+#    Updated: 2022/11/24 11:21:16 by etachott         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -21,7 +21,8 @@ PATH_OBJS = .
 
 CCFLAGS = -Wall -Wextra -Werror
 
-LIBSRCS = $(addprefix $(PATH_LIBSRCS)/, ft_atoi.c \
+LIBSRCS = $(addprefix $(PATH_LIBSRCS)/, ft_abs.c \
+       ft_atoi.c       \
 	   ft_bzero.c      \
 	   ft_calloc.c     \
 	   ft_isalnum.c    \
