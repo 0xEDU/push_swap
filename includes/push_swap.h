@@ -6,7 +6,7 @@
 /*   By: etachott <etachott@student.42sp.org.b      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/13 13:26:11 by etachott          #+#    #+#             */
-/*   Updated: 2022/11/23 17:26:02 by etachott         ###   ########.fr       */
+/*   Updated: 2022/11/24 18:05:35 by etachott         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,13 +20,14 @@ typedef struct s_stack {
 	int				index;
 	int				pos;
 	int				target_pos;
-//	int				cost_a;
-//	int				cost_b;
+	int				cost_a;
+	int				cost_b;
 	struct s_stack	*next;
 }				t_stack;
 
 t_stack	*argv_to_stack(char *argv[], int stack_size);
 void	add_node_front(t_stack **stack, t_stack *new);
+void	calculate_move_cost(t_stack **stack_a, t_stack **stack_b);
 void	calculate_target_pos(t_stack **stack_a, t_stack **stack_b);
 t_stack	*create_node(char *str);
 t_stack	*create_empty_stack(int stack_size);

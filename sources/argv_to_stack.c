@@ -6,7 +6,7 @@
 /*   By: etachott <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/15 15:37:28 by etachott          #+#    #+#             */
-/*   Updated: 2022/11/23 16:56:11 by etachott         ###   ########.fr       */
+/*   Updated: 2022/11/24 17:00:29 by etachott         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,11 +21,14 @@ void	print_stack(t_stack *stack)
 		ft_print("STACK IS NULL.");
 	while (stack)
 	{
-		ft_print("NODE %d: val = %d idx = %d pos = %d targ = %d", index,
+		ft_print("NODE %d: vl = %d idx = %d ps = %d trg = %d ca = %d cb = %d",
+			index,
 			stack->value,
 			stack->index,
 			stack->pos,
-			stack->target_pos);
+			stack->target_pos,
+			stack->cost_a,
+			stack->cost_b);
 		stack = stack->next;
 		index++;
 	}

@@ -10,12 +10,13 @@ INCS_PATH = ./includes
 LIBFT = ./libft/libft.a
 
 SRCS = $(addprefix $(SRCS_PATH)/, main.c \
-	   argv_to_stack.c \
-	   calculate.c     \
-	   list_utils.c    \
-	   sort.c          \
-	   sort_big.c      \
-	   sort_threes.c   \
+	   argv_to_stack.c    \
+	   calculate_moves.c  \
+	   calculate_target.c \
+	   list_utils.c       \
+	   sort.c             \
+	   sort_big.c         \
+	   sort_threes.c      \
 	   validate_input.c)
 
 OPERATIONS_SRCS = $(addprefix $(OPERATIONS_PATH)/, swap.c \
