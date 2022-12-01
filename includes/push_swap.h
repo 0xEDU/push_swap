@@ -6,7 +6,7 @@
 /*   By: etachott <etachott@student.42sp.org.b      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/13 13:26:11 by etachott          #+#    #+#             */
-/*   Updated: 2022/11/24 18:05:35 by etachott         ###   ########.fr       */
+/*   Updated: 2022/12/01 00:45:36 by etachott         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,12 +25,25 @@ typedef struct s_stack {
 	struct s_stack	*next;
 }				t_stack;
 
+typedef struct s_cost {
+	int	a;
+	int	b;
+}				t_cost;
+
 t_stack	*argv_to_stack(char *argv[], int stack_size);
 void	add_node_front(t_stack **stack, t_stack *new);
 void	calculate_move_cost(t_stack **stack_a, t_stack **stack_b);
 void	calculate_target_pos(t_stack **stack_a, t_stack **stack_b);
 t_stack	*create_node(char *str);
 t_stack	*create_empty_stack(int stack_size);
+void	decision_maker(t_stack **stack_a, t_stack **stack_b);
+void	exec_a(t_stack **stack_a, t_cost *cost);
+void	exec_b(t_stack **stack_b, t_cost *cost);
+void	exec_reverse_rotate_rotate(t_stack **stack_a, t_stack **stack_b,
+			t_cost *cost);
+void	exec_rotate_rotate(t_stack **stack_a, t_stack **stack_b,
+			t_cost *cost);
+void	executioner(t_stack **stack_a, t_stack **stack_b);
 void	ft_stackfree(t_stack **stack);
 int		has_value(t_stack *stack);
 void	init_index(t_stack **stack);

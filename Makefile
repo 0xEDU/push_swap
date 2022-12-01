@@ -14,6 +14,7 @@ SRCS = $(addprefix $(SRCS_PATH)/, main.c \
 	   calculate_moves.c  \
 	   calculate_target.c \
 	   execute.c          \
+	   instructions.c     \
 	   list_utils.c       \
 	   sort.c             \
 	   sort_big.c         \

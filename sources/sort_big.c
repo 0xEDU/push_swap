@@ -6,7 +6,7 @@
 /*   By: etachott <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/22 10:21:40 by etachott          #+#    #+#             */
-/*   Updated: 2022/11/24 18:54:17 by etachott         ###   ########.fr       */
+/*   Updated: 2022/12/01 01:20:53 by etachott         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -70,17 +70,16 @@ void	get_current_pos(t_stack **stack)
 
 void	sort_big(t_stack **stack_a, t_stack **stack_b, int stack_size)
 {
-	int	f;
-
-	f = 0;
 	push_to_b(stack_a, stack_b, stack_size);
 	sort_threes(stack_a);
-	while (has_value(*stack_b) && f < 2)
+	while (*stack_b)
 	{
 		get_current_pos(stack_a);
 		get_current_pos(stack_b);
 		calculate_target_pos(stack_a, stack_b);
 		calculate_move_cost(stack_a, stack_b);
-		f++;
+		executioner(stack_a, stack_b);
 	}
+	if (!is_sorted(*stack_a))
+		arrange_array(stack_a);
 }

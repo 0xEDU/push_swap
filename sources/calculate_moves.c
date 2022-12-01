@@ -6,7 +6,7 @@
 /*   By: etachott <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/23 17:50:13 by etachott          #+#    #+#             */
-/*   Updated: 2022/11/24 18:06:22 by etachott         ###   ########.fr       */
+/*   Updated: 2022/11/30 23:05:05 by etachott         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,8 +25,8 @@ static int	ft_stacksize(t_stack *stack)
 	size = 0;
 	while (tmp)
 	{
-		size++;
 		tmp = tmp->next;
+		size++;
 	}
 	return (size);
 }
