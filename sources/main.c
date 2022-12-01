@@ -6,7 +6,7 @@
 /*   By: etachott <etachott@student.42sp.org.b      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/13 11:23:40 by etachott          #+#    #+#             */
-/*   Updated: 2022/11/22 15:43:49 by etachott         ###   ########.fr       */
+/*   Updated: 2022/12/01 02:30:50 by etachott         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -70,17 +70,8 @@ int	main(int argc, char *argv[])
 	}
 	stack_a = init_stack(argv, stack_size);
 	stack_b = NULL;
-	ft_print("BEFORE");
-	print_stack(stack_a);
-	ft_print("");
-	print_stack(stack_b);
-	ft_print("");
 	if (!is_sorted(stack_a))
 		sort(&stack_a, &stack_b, stack_size - 1);
-	ft_print("AFTER");
-	print_stack(stack_a);
-	ft_print("");
-	print_stack(stack_b);
 	ft_stackfree(&stack_a);
 	ft_stackfree(&stack_b);
 	return (0);
