@@ -6,7 +6,7 @@
 /*   By: etachott <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/23 17:50:13 by etachott          #+#    #+#             */
-/*   Updated: 2022/11/30 23:05:05 by etachott         ###   ########.fr       */
+/*   Updated: 2022/12/01 01:26:07 by etachott         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@
  * calculate the cost of putting the target_pos at the top of a.
  */
 
-static int	ft_stacksize(t_stack *stack)
+int	ft_stacksize(t_stack *stack)
 {
 	t_stack	*tmp;
 	int		size;

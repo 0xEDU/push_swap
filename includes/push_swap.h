@@ -6,7 +6,7 @@
 /*   By: etachott <etachott@student.42sp.org.b      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/13 13:26:11 by etachott          #+#    #+#             */
-/*   Updated: 2022/12/01 00:45:36 by etachott         ###   ########.fr       */
+/*   Updated: 2022/12/01 01:35:07 by etachott         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,6 +30,7 @@ typedef struct s_cost {
 	int	b;
 }				t_cost;
 
+void	arrange_stack(t_stack **stack_a);
 t_stack	*argv_to_stack(char *argv[], int stack_size);
 void	add_node_front(t_stack **stack, t_stack *new);
 void	calculate_move_cost(t_stack **stack_a, t_stack **stack_b);
@@ -45,6 +46,8 @@ void	exec_rotate_rotate(t_stack **stack_a, t_stack **stack_b,
 			t_cost *cost);
 void	executioner(t_stack **stack_a, t_stack **stack_b);
 void	ft_stackfree(t_stack **stack);
+int		ft_stacksize(t_stack *stack);
+void	get_current_pos(t_stack **stack);
 int		has_value(t_stack *stack);
 void	init_index(t_stack **stack);
 int		is_sorted(t_stack *head);

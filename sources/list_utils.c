@@ -6,7 +6,7 @@
 /*   By: etachott <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/17 10:28:39 by etachott          #+#    #+#             */
-/*   Updated: 2022/11/22 15:57:26 by etachott         ###   ########.fr       */
+/*   Updated: 2022/12/01 01:37:57 by etachott         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -50,15 +50,4 @@ void	add_node_front(t_stack **stack, t_stack *new)
 {
 	new->next = *stack;
 	*stack = new;
-}
-
-int	has_value(t_stack *stack)
-{
-	while (stack)
-	{
-		if (stack->value)
-			return (1);
-		stack = stack->next;
-	}
-	return (0);
 }

@@ -6,7 +6,7 @@
 /*   By: etachott <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/22 10:21:40 by etachott          #+#    #+#             */
-/*   Updated: 2022/12/01 01:20:53 by etachott         ###   ########.fr       */
+/*   Updated: 2022/12/01 01:39:27 by etachott         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -81,5 +81,5 @@ void	sort_big(t_stack **stack_a, t_stack **stack_b, int stack_size)
 		executioner(stack_a, stack_b);
 	}
 	if (!is_sorted(*stack_a))
-		arrange_array(stack_a);
+		arrange_stack(stack_a);
 }

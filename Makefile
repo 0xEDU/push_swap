@@ -10,6 +10,7 @@ INCS_PATH = ./includes
 LIBFT = ./libft/libft.a
 
 SRCS = $(addprefix $(SRCS_PATH)/, main.c \
+	   arrange.c          \
 	   argv_to_stack.c    \
 	   calculate_moves.c  \
 	   calculate_target.c \
