@@ -6,7 +6,7 @@
 /*   By: etachott <etachott@student.42sp.org.b      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/13 13:26:11 by etachott          #+#    #+#             */
-/*   Updated: 2022/12/01 01:35:07 by etachott         ###   ########.fr       */
+/*   Updated: 2022/12/01 12:39:25 by etachott         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,7 +31,8 @@ typedef struct s_cost {
 }				t_cost;
 
 void	arrange_stack(t_stack **stack_a);
-t_stack	*argv_to_stack(char *argv[], int stack_size);
+t_stack	*argv_to_stack(char *argv[], int argc, int stack_size);
+void	add_node_back(t_stack **stack, t_stack *new);
 void	add_node_front(t_stack **stack, t_stack *new);
 void	calculate_move_cost(t_stack **stack_a, t_stack **stack_b);
 void	calculate_target_pos(t_stack **stack_a, t_stack **stack_b);
@@ -45,6 +46,7 @@ void	exec_reverse_rotate_rotate(t_stack **stack_a, t_stack **stack_b,
 void	exec_rotate_rotate(t_stack **stack_a, t_stack **stack_b,
 			t_cost *cost);
 void	executioner(t_stack **stack_a, t_stack **stack_b);
+int		ft_matrixsize(char **matrix);
 void	ft_stackfree(t_stack **stack);
 int		ft_stacksize(t_stack *stack);
 void	get_current_pos(t_stack **stack);
@@ -68,4 +70,5 @@ void	sort(t_stack **stack_a, t_stack **stack_b, int stack_size);
 void	sort_big(t_stack **stack_a, t_stack **stack_b, int stack_size);
 void	sort_threes(t_stack **stack);
 int		validate_input(char *argv[]);
+int		validate_quotes(char *argv[]);
 #endif

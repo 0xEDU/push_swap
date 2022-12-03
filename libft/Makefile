@@ -6,7 +6,7 @@
 #    By: coder <coder@student.42.fr>                +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/08/27 15:51:38 by coder             #+#    #+#              #
-#    Updated: 2022/11/24 11:21:16 by etachott         ###   ########.fr        #
+#    Updated: 2022/12/01 12:18:18 by etachott         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -25,6 +25,7 @@ LIBSRCS = $(addprefix $(PATH_LIBSRCS)/, ft_abs.c \
        ft_atoi.c       \
 	   ft_bzero.c      \
 	   ft_calloc.c     \
+	   ft_freematrix.c \
 	   ft_isalnum.c    \
 	   ft_isalpha.c    \
 	   ft_isascii.c    \

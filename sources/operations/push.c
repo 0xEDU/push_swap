@@ -6,11 +6,17 @@
 /*   By: etachott <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/17 16:23:06 by etachott          #+#    #+#             */
-/*   Updated: 2022/12/01 02:25:07 by etachott         ###   ########.fr       */
+/*   Updated: 2022/12/01 12:21:16 by etachott         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
+
+void	add_node_front(t_stack **stack, t_stack *new)
+{
+	new->next = *stack;
+	*stack = new;
+}
 
 void	push_a(t_stack **stack_a, t_stack **stack_b)
 {

@@ -6,7 +6,7 @@
 /*   By: etachott <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/22 10:21:40 by etachott          #+#    #+#             */
-/*   Updated: 2022/12/01 01:39:27 by etachott         ###   ########.fr       */
+/*   Updated: 2022/12/03 14:19:39 by etachott         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@ static void	push_to_b(t_stack **stack_a, t_stack **stack_b, int stack_size)
 	index = 0;
 	sent = 0;
 	stack_mid = stack_size / 2;
-	while (stack_size < 6 && index < stack_size && sent < stack_mid)
+	while (stack_size > 6 && index < stack_size && sent < stack_mid)
 	{
 		if ((*stack_a)->index <= stack_mid)
 		{
@@ -71,6 +71,9 @@ void	get_current_pos(t_stack **stack)
 void	sort_big(t_stack **stack_a, t_stack **stack_b, int stack_size)
 {
 	push_to_b(stack_a, stack_b, stack_size);
+	print_stack(*stack_a);
+	ft_print("");
+	print_stack(*stack_b);
 	sort_threes(stack_a);
 	while (*stack_b)
 	{

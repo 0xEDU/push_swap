@@ -6,7 +6,7 @@
 /*   By: etachott <etachott@student.42sp.org.b      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/13 11:23:40 by etachott          #+#    #+#             */
-/*   Updated: 2022/12/01 02:30:50 by etachott         ###   ########.fr       */
+/*   Updated: 2022/12/03 14:16:42 by etachott         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,11 +45,13 @@ void	init_index(t_stack **stack)
 	}
 }
 
-t_stack	*init_stack(char *argv[], int stack_size)
+static t_stack	*init_stack(char *argv[], int argc, int stack_size)
 {
 	t_stack	*stack;
 
-	stack = argv_to_stack(argv, stack_size);
+	stack = argv_to_stack(argv, argc, stack_size);
+	if (!stack)
+		return (NULL);
 	init_index(&stack);
 	return (stack);
 }
@@ -59,19 +61,26 @@ int	main(int argc, char *argv[])
 	t_stack	*stack_a;
 	t_stack	*stack_b;
 	int		stack_size;
+	int		quotes;
 
-	if (argc <= 2)
+	if (argc < 2)
 		exit(0);
 	stack_size = validate_input(argv);
+	if (argc == 2)
+		quotes = validate_quotes(argv);
 	if (!stack_size)
 	{
 		ft_print("Error");
 		exit(0);
 	}
-	stack_a = init_stack(argv, stack_size);
+	stack_a = init_stack(argv, argc, stack_size);
 	stack_b = NULL;
-	if (!is_sorted(stack_a))
+	print_stack(stack_a);
+	if (!is_sorted(stack_a) && argc != 2)
 		sort(&stack_a, &stack_b, stack_size - 1);
+	else
+		sort(&stack_a, &stack_b, quotes);
+	print_stack(stack_a);
 	ft_stackfree(&stack_a);
 	ft_stackfree(&stack_b);
 	return (0);

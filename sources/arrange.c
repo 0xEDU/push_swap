@@ -6,7 +6,7 @@
 /*   By: etachott <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/01 01:22:07 by etachott          #+#    #+#             */
-/*   Updated: 2022/12/01 02:28:22 by etachott         ###   ########.fr       */
+/*   Updated: 2022/12/03 14:13:44 by etachott         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@ static int	get_lowest_pos(t_stack **stack)
 	int		lowest_index;
 
 	tmp = *stack;
-	lowest_index = tmp->index;
+	lowest_index = INT_MAX;
 	get_current_pos(stack);
 	position = tmp->pos;
 	while (tmp)
@@ -31,6 +31,7 @@ static int	get_lowest_pos(t_stack **stack)
 		}
 		tmp = tmp->next;
 	}
+	ft_print("POSITION = %d", position);
 	return (position);
 }
 

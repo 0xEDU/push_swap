@@ -6,7 +6,7 @@
 /*   By: etachott <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/15 15:37:28 by etachott          #+#    #+#             */
-/*   Updated: 2022/11/24 17:00:29 by etachott         ###   ########.fr       */
+/*   Updated: 2022/12/01 13:56:37 by etachott         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,6 +34,16 @@ void	print_stack(t_stack *stack)
 	}
 }
 
+int	ft_matrixsize(char **matrix)
+{
+	int	index;
+
+	index = 0;
+	while (matrix[index])
+		index++;
+	return (index);
+}
+
 t_stack	*create_empty_stack(int stack_size)
 {
 	t_stack	*stack;
@@ -52,18 +62,48 @@ t_stack	*create_empty_stack(int stack_size)
 	return (stack);
 }
 
-t_stack	*argv_to_stack(char *argv[], int stack_size)
+t_stack	*quotes_treatment(char *argv[])
 {
-	t_stack	*stack;
 	t_stack	*tail;
+	t_stack	*stack;
+	char	**word_matrix;
 	int		index;
 
-	index = stack_size - 1;
-	tail = create_node(argv[index--]);
-	while (index)
+	word_matrix = ft_split(argv[1], ' ');
+	index = ft_matrixsize(word_matrix) - 1;
+	if (index == 1)
 	{
-		stack = create_node(argv[index--]);
-		add_node_front(&tail, stack);
+		free(word_matrix);
+		return (NULL);
 	}
+	tail = create_node(word_matrix[index--]);
+	while (index >= 0)
+	{
+		stack = create_node(word_matrix[index--]);
+		add_node_back(&tail, stack);
+	}
+	ft_freematrix(word_matrix);
 	return (tail);
+}
+
+t_stack	*argv_to_stack(char *argv[], int argc, int stack_size)
+{
+	t_stack	*stack;
+	t_stack	*head;
+	int		index;
+
+	head = NULL;
+	index = 1;
+	if (argc != 2)
+	{
+		head = create_node(argv[index++]);
+		while (index < stack_size)
+		{
+			stack = create_node(argv[index++]);
+			add_node_back(&head, stack);
+		}
+	}
+	else
+		head = quotes_treatment(argv);
+	return (head);
 }

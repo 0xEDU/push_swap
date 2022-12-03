@@ -6,13 +6,13 @@
 /*   By: etachott <etachott@student.42sp.org.b      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/14 17:19:46 by etachott          #+#    #+#             */
-/*   Updated: 2022/11/17 19:20:37 by etachott         ###   ########.fr       */
+/*   Updated: 2022/12/01 05:10:36 by etachott         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-int	check_extremes(char *argv[])
+static int	check_extremes(char *argv[])
 {
 	int	max;
 	int	min;
@@ -30,7 +30,7 @@ int	check_extremes(char *argv[])
 	return (1);
 }
 
-int	check_doubles(char *argv[])
+static int	check_doubles(char *argv[])
 {
 	int	n;
 	int	index;
@@ -72,4 +72,18 @@ int	validate_input(char *argv[])
 			return (0);
 	}
 	return (index);
+}
+
+int	validate_quotes(char *argv[])
+{
+	char	**word_matrix;
+	int		quotes;
+
+	word_matrix = ft_split(argv[1], ' ');
+	quotes = ft_matrixsize(word_matrix);
+	ft_freematrix(word_matrix);
+	if (quotes > 1)
+		return (quotes);
+	else
+		return (0);
 }

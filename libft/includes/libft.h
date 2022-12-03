@@ -6,7 +6,7 @@
 /*   By: coder <coder@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/27 15:51:37 by coder             #+#    #+#             */
-/*   Updated: 2022/11/24 11:20:25 by etachott         ###   ########.fr       */
+/*   Updated: 2022/12/01 04:02:27 by etachott         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,6 +25,7 @@ int				ft_abs(int num);
 long int		ft_atoi(const char *str);
 void			ft_bzero(void *s, size_t n);
 void			*ft_calloc(size_t count, size_t size);
+void			ft_freematrix(char **matrix);
 int				ft_isascii(int c);
 int				ft_isalnum(int c);
 int				ft_isalpha(int c);
