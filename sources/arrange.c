@@ -6,7 +6,7 @@
 /*   By: etachott <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/01 01:22:07 by etachott          #+#    #+#             */
-/*   Updated: 2022/12/03 14:13:44 by etachott         ###   ########.fr       */
+/*   Updated: 2022/12/05 10:45:12 by etachott         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,7 +31,6 @@ static int	get_lowest_pos(t_stack **stack)
 		}
 		tmp = tmp->next;
 	}
-	ft_print("POSITION = %d", position);
 	return (position);
 }
 
