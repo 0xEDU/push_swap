@@ -1,4 +1,5 @@
 NAME = push_swap
+BONUS_NAME = checker
 
 CCFLAGS = -Wall -Wextra -Werror -g3
 
@@ -6,6 +7,9 @@ SRCS_PATH = ./sources
 OPERATIONS_PATH = ./sources/operations
 OBJS_PATH = .
 INCS_PATH = ./includes
+
+BONUS_PATH = ./bonus
+BONUS_INCLUDES = ./bonus/includes
 
 LIBFT = ./libft/libft.a
 
@@ -27,8 +31,12 @@ OPERATIONS_SRCS = $(addprefix $(OPERATIONS_PATH)/, swap.c \
 				  reverse_rotate.c \
 				  rotate.c)
 
+BONUS_SRCS = $(addprefix $(BONUS_PATH)/, main.c)
+
 OBJS = $(patsubst $(SRCS_PATH)/%.c, $(OBJS_PATH)/%.o, $(SRCS))
 OPERATIONS_OBJS = $(patsubst $(OPERATIONS_PATH)/%.c, $(OBJS_PATH)/%.o, $(OPERATIONS_SRCS))
+
+BONUS_OBJS = $(patsubst $(BONUS_PATH)/%.c, $(OBJS_PATH), $(BONUS_SRCS))
 
 all: $(NAME)
 
@@ -43,6 +51,16 @@ $(OBJS): $(SRCS)
 $(OPERATIONS_OBJS): $(OPERATIONS_SRCS)
 	@echo -e "COMPILING PUSH_SWAP OPERATIONS OBJS..."
 	@$(CC) $(CCFLAGS) -I$(INCS_PATH) -c $(OPERATIONS_SRCS)
+
+bonus: $(BONUS_NAME)
+
+$(BONUS_NAME): $(BONUS_OBJS) $(LIBFT)
+	@$(CC) $(CCFLAGS) $(BONUS_OBJS) $(LIBFT) -o $(BONUS_NAME)
+	@echo -e "BONUS CREATED!!"
+
+$(BONUS_OBJS): $(BONUS_SRCS)
+	@echo -e "COMPILING BONUS OBJS..."
+	@$(CC) $(CCFLAGS) -I$(BONUS_INCLUDES) -c $(BONUS_SRCS)
 
 $(LIBFT):
 	@echo -e "CREATING LIBFT"
