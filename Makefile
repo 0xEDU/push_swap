@@ -31,7 +31,11 @@ OPERATIONS_SRCS = $(addprefix $(OPERATIONS_PATH)/, swap.c \
 				  reverse_rotate.c \
 				  rotate.c)
 
-BONUS_SRCS = $(addprefix $(BONUS_PATH)/, main.c)
+BONUS_SRCS = $(addprefix $(BONUS_PATH)/, main.c \
+			 apply_move_from_stdin.c \
+			 argv_to_stack_bonus.c   \
+			 list_utils_bonus.c      \
+			 validate_input_bonus.c)
 
 OBJS = $(patsubst $(SRCS_PATH)/%.c, $(OBJS_PATH)/%.o, $(SRCS))
 OPERATIONS_OBJS = $(patsubst $(OPERATIONS_PATH)/%.c, $(OBJS_PATH)/%.o, $(OPERATIONS_SRCS))
