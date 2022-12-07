@@ -36,7 +36,7 @@ BONUS_SRCS = $(addprefix $(BONUS_PATH)/, main.c)
 OBJS = $(patsubst $(SRCS_PATH)/%.c, $(OBJS_PATH)/%.o, $(SRCS))
 OPERATIONS_OBJS = $(patsubst $(OPERATIONS_PATH)/%.c, $(OBJS_PATH)/%.o, $(OPERATIONS_SRCS))
 
-BONUS_OBJS = $(patsubst $(BONUS_PATH)/%.c, $(OBJS_PATH), $(BONUS_SRCS))
+BONUS_OBJS = $(patsubst $(BONUS_PATH)/%.c, $(OBJS_PATH)/%.o, $(BONUS_SRCS))
 
 all: $(NAME)
 
@@ -69,12 +69,12 @@ $(LIBFT):
 clean:
 	@echo -e "REMOVING OBJS..."
 	@make --no-print-directory -C libft clean
-	@rm -rf $(OBJS) $(OPERATIONS_OBJS)
+	@rm -rf $(OBJS) $(OPERATIONS_OBJS) $(BONUS_OBJS)
 
 fclean: clean
 	@echo -e "FULL CLEAN"
 	@make --no-print-directory -C libft fclean
-	@rm -rf $(NAME)
+	@rm -rf $(NAME) $(BONUS_NAME)
 
 re: fclean all
 
