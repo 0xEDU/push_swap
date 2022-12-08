@@ -6,7 +6,7 @@
 /*   By: coder <marvin@42.fr>                       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/14 19:45:27 by coder             #+#    #+#             */
-/*   Updated: 2022/11/13 08:16:06 by etachott         ###   ########.fr       */
+/*   Updated: 2022/12/08 11:58:56 by etachott         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,7 +29,7 @@ int	gnl_strchr(const char *s, char c)
 	return (0);
 }
 
-char	*ft_strdup(const char *s1)
+char	*gnl_strdup(const char *s1)
 {
 	char	*k;
 
@@ -87,9 +87,9 @@ char	*gnl_strjoin(char *s1, char *s2)
 	if (s1 == NULL && s2 == NULL)
 		return (NULL);
 	if (s1 == NULL)
-		return (ft_strdup(s2));
+		return (gnl_strdup(s2));
 	if (s2 == NULL)
-		return (ft_strdup(s1));
+		return (gnl_strdup(s1));
 	size = ft_strlen(s1) + ft_strlen(s2) + 1;
 	new = malloc(size * sizeof(char));
 	if (new == NULL)

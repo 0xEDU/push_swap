@@ -9,6 +9,7 @@ OBJS_PATH = .
 INCS_PATH = ./includes
 
 BONUS_PATH = ./bonus
+BONUS_OPERATIONS_PATH = ./bonus/operations
 BONUS_INCLUDES = ./bonus/includes
 
 LIBFT = ./libft/libft.a
@@ -31,16 +32,22 @@ OPERATIONS_SRCS = $(addprefix $(OPERATIONS_PATH)/, swap.c \
 				  reverse_rotate.c \
 				  rotate.c)
 
-BONUS_SRCS = $(addprefix $(BONUS_PATH)/, main.c \
+BONUS_SRCS = $(addprefix $(BONUS_PATH)/, main_bonus.c \
 			 apply_move_from_stdin.c \
 			 argv_to_stack_bonus.c   \
 			 list_utils_bonus.c      \
 			 validate_input_bonus.c)
 
+BONUS_OPERATIONS_SRCS = $(addprefix $(BONUS_OPERATIONS_PATH)/, swap_bonus.c \
+				  push_bonus.c           \
+				  reverse_rotate_bonus.c \
+				  rotate_bonus.c)
+
 OBJS = $(patsubst $(SRCS_PATH)/%.c, $(OBJS_PATH)/%.o, $(SRCS))
 OPERATIONS_OBJS = $(patsubst $(OPERATIONS_PATH)/%.c, $(OBJS_PATH)/%.o, $(OPERATIONS_SRCS))
 
 BONUS_OBJS = $(patsubst $(BONUS_PATH)/%.c, $(OBJS_PATH)/%.o, $(BONUS_SRCS))
+BONUS_OPERATIONS_OBJS = $(patsubst $(BONUS_OPERATIONS_PATH)/%.c, $(OBJS_PATH)/%.o, $(BONUS_OPERATIONS_SRCS))
 
 all: $(NAME)
 
@@ -58,13 +65,17 @@ $(OPERATIONS_OBJS): $(OPERATIONS_SRCS)
 
 bonus: $(BONUS_NAME)
 
-$(BONUS_NAME): $(BONUS_OBJS) $(LIBFT)
-	@$(CC) $(CCFLAGS) $(BONUS_OBJS) $(LIBFT) -o $(BONUS_NAME)
+$(BONUS_NAME): $(BONUS_OBJS) $(BONUS_OPERATIONS_OBJS) $(LIBFT)
+	@$(CC) $(CCFLAGS) $(BONUS_OBJS) $(BONUS_OPERATIONS_OBJS) $(LIBFT) -o $(BONUS_NAME)
 	@echo -e "BONUS CREATED!!"
 
 $(BONUS_OBJS): $(BONUS_SRCS)
 	@echo -e "COMPILING BONUS OBJS..."
 	@$(CC) $(CCFLAGS) -I$(BONUS_INCLUDES) -c $(BONUS_SRCS)
+
+$(BONUS_OPERATIONS_OBJS): $(BONUS_OPERATIONS_SRCS)
+	@echo -e "COMPILING PUSH_SWAP BONUS OPERATIONS OBJS..."
+	@$(CC) $(CCFLAGS) -I$(BONUS_INCLUDES) -c $(BONUS_OPERATIONS_SRCS)
 
 $(LIBFT):
 	@echo -e "CREATING LIBFT"

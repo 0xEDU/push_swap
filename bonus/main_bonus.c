@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.c                                             :+:      :+:    :+:   */
+/*   main_bonus.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: etachott <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/06 19:49:20 by etachott          #+#    #+#             */
-/*   Updated: 2022/12/07 14:12:10 by etachott         ###   ########.fr       */
+/*   Updated: 2022/12/08 15:07:54 by etachott         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,12 +16,6 @@ void	error(void)
 {
 	ft_print("Error");
 	exit(0);
-}
-
-void	add_node_front(t_stack **stack, t_stack *new)
-{
-	new->next = *stack;
-	*stack = new;
 }
 
 static int	is_sorted(t_stack *head)
@@ -47,24 +41,28 @@ static t_stack	*init_stack(char *argv[], int argc, int stack_size)
 
 int	main(int argc, char *argv[])
 {
-	t_stack	*stack;
+	t_stack	*stack_a;
+	t_stack	*stack_b;
 	int		stack_size;
 	int		quotes;
 
 	if (argc < 2)
-		error();
+		exit(0);
 	stack_size = validate_input(argv);
 	if (argc == 2)
 		quotes = validate_quotes(argv);
 	if (!stack_size)
 		error();
-	stack = init_stack(argv, argc, stack_size);
-	print_stack(stack);
-	apply_move_from_stdin(&stack);
-	if (is_sorted(stack))
+	stack_a = init_stack(argv, argc, stack_size);
+	stack_b = NULL;
+	print_stack(stack_a);
+	apply_move_from_stdin(&stack_a, &stack_b);
+	if (is_sorted(stack_a))
 		ft_print("OK");
 	else
 		ft_print("KO");
-	ft_stackfree(&stack);
+	ft_stackfree(&stack_a);
+	if (stack_b)
+		ft_stackfree(&stack_b);
 	return (0);
 }

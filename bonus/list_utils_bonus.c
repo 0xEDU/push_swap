@@ -6,7 +6,7 @@
 /*   By: etachott <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/17 10:28:39 by etachott          #+#    #+#             */
-/*   Updated: 2022/12/07 13:51:57 by etachott         ###   ########.fr       */
+/*   Updated: 2022/12/08 14:47:46 by etachott         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,15 +33,6 @@ t_stack	*ft_stacklast(t_stack *stack)
 	while (stack->next)
 		stack = stack->next;
 	return (stack);
-}
-
-void	pop(t_stack **stack)
-{
-	t_stack	*prev_node;
-
-	prev_node = *stack;
-	*stack = (*stack)->next;
-	free(prev_node);
 }
 
 t_stack	*create_node(char *str)
