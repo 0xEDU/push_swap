@@ -6,7 +6,7 @@
 /*   By: etachott <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/07 14:08:47 by etachott          #+#    #+#             */
-/*   Updated: 2022/12/09 15:37:24 by etachott         ###   ########.fr       */
+/*   Updated: 2022/12/09 17:44:30 by etachott         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -55,10 +55,7 @@ int	is_valid(char **valid_instructions, char *line)
 	while (valid_instructions[index])
 	{
 		if (!ft_strncmp(valid_instructions[index], line, ft_strlen(line)))
-		{
-			ft_print("Achou");
 			return (1);
-		}
 		index++;
 	}
 	return (0);
@@ -109,13 +106,9 @@ void	apply_move_from_stdin(t_stack **stack_a, t_stack **stack_b)
 			ft_freematrix(valid_instructions);
 			ft_stackfree(stack_a);
 			ft_stackfree(stack_b);
-			ft_print("CARALHo");
 			exit(0);
 		}
 		apply_op_to_stack(stack_a, stack_b, line);
-		print_stack(*stack_a);
-		ft_print("");
-		print_stack(*stack_b);
 		free(line);
 	}
 	ft_freematrix(valid_instructions);

@@ -6,7 +6,7 @@
 /*   By: etachott <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/18 16:05:12 by etachott          #+#    #+#             */
-/*   Updated: 2022/12/09 15:16:20 by etachott         ###   ########.fr       */
+/*   Updated: 2022/12/09 17:45:51 by etachott         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,6 @@ void	reverse_rotate(t_stack **stack)
 		return ;
 	if (!(*stack)->next)
 		return ;
-	ft_print("THIS IS STACK %d", (*stack)->value);
 	head = *stack;
 	tmp = *stack;
 	while (tmp->next)

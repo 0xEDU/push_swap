@@ -6,7 +6,7 @@
 /*   By: etachott <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/06 19:49:20 by etachott          #+#    #+#             */
-/*   Updated: 2022/12/08 15:07:54 by etachott         ###   ########.fr       */
+/*   Updated: 2022/12/09 17:43:03 by etachott         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -55,7 +55,6 @@ int	main(int argc, char *argv[])
 		error();
 	stack_a = init_stack(argv, argc, stack_size);
 	stack_b = NULL;
-	print_stack(stack_a);
 	apply_move_from_stdin(&stack_a, &stack_b);
 	if (is_sorted(stack_a))
 		ft_print("OK");
