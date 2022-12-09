@@ -6,7 +6,7 @@
 /*   By: etachott <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/07 14:08:47 by etachott          #+#    #+#             */
-/*   Updated: 2022/12/08 15:17:12 by etachott         ###   ########.fr       */
+/*   Updated: 2022/12/09 15:37:24 by etachott         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -72,16 +72,16 @@ void	apply_op_to_stack(t_stack **stack_a, t_stack **stack_b, char *line)
 		swap(stack_b);
 	if (!ft_strncmp(line, "ss", 2))
 		super_swap(stack_a, stack_b);
-	if (!ft_strncmp(line, "ra", 2))
-		rotate(stack_a);
-	if (!ft_strncmp(line, "rb", 2))
-		rotate(stack_b);
-	if (!ft_strncmp(line, "rr", 2))
-		rotate_rotate(stack_a, stack_b);
 	if (!ft_strncmp(line, "rra", 3))
 		reverse_rotate(stack_a);
 	if (!ft_strncmp(line, "rrb", 3))
 		reverse_rotate(stack_b);
+	if (!ft_strncmp(line, "ra", 2))
+		rotate(stack_a);
+	if (!ft_strncmp(line, "rb", 2))
+		rotate(stack_b);
+	if (!ft_strncmp(line, "rr", 2) && ft_strlen(line) != 4)
+		rotate_rotate(stack_a, stack_b);
 	if (!ft_strncmp(line, "rrr", 3))
 		reverse_rotate_rotate(stack_a, stack_b);
 	if (!ft_strncmp(line, "pa", 2))
@@ -104,10 +104,12 @@ void	apply_move_from_stdin(t_stack **stack_a, t_stack **stack_b)
 		if (!is_valid(valid_instructions, line))
 		{
 			free(line);
+			line = get_next_line(3);
+			free(line);
 			ft_freematrix(valid_instructions);
 			ft_stackfree(stack_a);
 			ft_stackfree(stack_b);
-			ft_print("Error");
+			ft_print("CARALHo");
 			exit(0);
 		}
 		apply_op_to_stack(stack_a, stack_b, line);
