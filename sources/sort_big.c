@@ -6,7 +6,7 @@
 /*   By: etachott <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/22 10:21:40 by etachott          #+#    #+#             */
-/*   Updated: 2022/12/05 15:55:24 by etachott         ###   ########.fr       */
+/*   Updated: 2022/12/09 17:49:30 by etachott         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -70,9 +70,6 @@ void	get_current_pos(t_stack **stack)
 void	sort_big(t_stack **stack_a, t_stack **stack_b, int stack_size)
 {
 	push_to_b(stack_a, stack_b, stack_size);
-	/*print_stack(*stack_a);
-	ft_print("");
-	print_stack(*stack_b);*/
 	sort_threes(stack_a);
 	while (*stack_b)
 	{
