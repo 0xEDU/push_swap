@@ -6,7 +6,7 @@
 /*   By: etachott <etachott@student.42sp.org.b      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/14 17:19:46 by etachott          #+#    #+#             */
-/*   Updated: 2022/12/01 05:10:36 by etachott         ###   ########.fr       */
+/*   Updated: 2022/12/09 16:23:33 by etachott         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -81,6 +81,12 @@ int	validate_quotes(char *argv[])
 
 	word_matrix = ft_split(argv[1], ' ');
 	quotes = ft_matrixsize(word_matrix);
+	if (quotes == 1 && (ft_atoi(word_matrix[0])
+			|| ft_strnstr(word_matrix[0], "0", ft_strlen(word_matrix[0]))))
+	{
+		ft_freematrix(word_matrix);
+		exit(0);
+	}
 	ft_freematrix(word_matrix);
 	if (quotes > 1)
 		return (quotes);
