@@ -6,7 +6,7 @@
 /*   By: etachott <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/07 14:08:47 by etachott          #+#    #+#             */
-/*   Updated: 2022/12/09 17:44:30 by etachott         ###   ########.fr       */
+/*   Updated: 2022/12/09 19:20:02 by etachott         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -106,6 +106,7 @@ void	apply_move_from_stdin(t_stack **stack_a, t_stack **stack_b)
 			ft_freematrix(valid_instructions);
 			ft_stackfree(stack_a);
 			ft_stackfree(stack_b);
+			ft_print("Error");
 			exit(0);
 		}
 		apply_op_to_stack(stack_a, stack_b, line);
