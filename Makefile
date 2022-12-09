@@ -25,6 +25,7 @@ SRCS = $(addprefix $(SRCS_PATH)/, main.c \
 	   sort.c             \
 	   sort_big.c         \
 	   sort_threes.c      \
+	   sort_five.c        \
 	   validate_input.c)
 
 OPERATIONS_SRCS = $(addprefix $(OPERATIONS_PATH)/, swap.c \

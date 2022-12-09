@@ -6,7 +6,7 @@
 /*   By: etachott <etachott@student.42sp.org.b      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/13 13:26:11 by etachott          #+#    #+#             */
-/*   Updated: 2022/12/01 12:39:25 by etachott         ###   ########.fr       */
+/*   Updated: 2022/12/09 18:47:11 by etachott         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -68,6 +68,7 @@ void	swap_b(t_stack **stack);
 void	super_swap(t_stack **stack_a, t_stack **stack_b);
 void	sort(t_stack **stack_a, t_stack **stack_b, int stack_size);
 void	sort_big(t_stack **stack_a, t_stack **stack_b, int stack_size);
+void	sort_five(t_stack **stack_a, t_stack **b);
 void	sort_threes(t_stack **stack);
 int		validate_input(char *argv[]);
 int		validate_quotes(char *argv[]);
