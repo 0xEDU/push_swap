@@ -6,7 +6,7 @@
 /*   By: etachott <etachott@student.42sp.org.b      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/13 11:23:40 by etachott          #+#    #+#             */
-/*   Updated: 2022/12/09 17:27:14 by etachott         ###   ########.fr       */
+/*   Updated: 2022/12/09 17:30:15 by etachott         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -75,9 +75,10 @@ int	main(int argc, char *argv[])
 	}
 	stack_a = init_stack(argv, argc, stack_size);
 	stack_b = NULL;
+	print_stack(stack_a);
 	if (!is_sorted(stack_a))
 		sort(&stack_a, &stack_b, stack_size - 1);
-	else if (argc == 2)
+	else if (argc == 2 && !is_sorted(stack_a))
 		sort(&stack_a, &stack_b, quotes);
 	ft_stackfree(&stack_a);
 	ft_stackfree(&stack_b);

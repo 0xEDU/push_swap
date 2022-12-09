@@ -6,7 +6,7 @@
 /*   By: etachott <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/15 15:37:28 by etachott          #+#    #+#             */
-/*   Updated: 2022/12/01 13:56:37 by etachott         ###   ########.fr       */
+/*   Updated: 2022/12/09 17:33:15 by etachott         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -64,26 +64,26 @@ t_stack	*create_empty_stack(int stack_size)
 
 t_stack	*quotes_treatment(char *argv[])
 {
-	t_stack	*tail;
+	t_stack	*head;
 	t_stack	*stack;
 	char	**word_matrix;
 	int		index;
 
 	word_matrix = ft_split(argv[1], ' ');
-	index = ft_matrixsize(word_matrix) - 1;
-	if (index == 1)
+	index = 0;
+	if ((ft_matrixsize(word_matrix) - 1) == 1)
 	{
 		free(word_matrix);
 		return (NULL);
 	}
-	tail = create_node(word_matrix[index--]);
-	while (index >= 0)
+	head = create_node(word_matrix[index++]);
+	while (index < ft_matrixsize(word_matrix) - 1)
 	{
-		stack = create_node(word_matrix[index--]);
-		add_node_back(&tail, stack);
+		stack = create_node(word_matrix[index++]);
+		add_node_back(&head, stack);
 	}
 	ft_freematrix(word_matrix);
-	return (tail);
+	return (head);
 }
 
 t_stack	*argv_to_stack(char *argv[], int argc, int stack_size)
